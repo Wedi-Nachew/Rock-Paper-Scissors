@@ -30,12 +30,17 @@ function playRound(playerSelection,computerSelection) {
     else if (playerSelection === "Scissors" && computerSelection==="Paper") {
         return "You Lose! Scissors beat Paper";
     } else {
-        return "Draw! Not Bad";
+        return "Draw! Not Bad!";
     }
 }
-const playerSelection = "Rock";
+// modified the playerSelection Variable so that the it can hold the players selection
+const playerSelection = +(prompt("Enter your selection: "));
 console.log(playerSelection);
 const computerSelection = getComputerChoice();
 console.log(computerSelection);
 console.log(playRound(playerSelection, computerSelection ));
+// creating the game function.
+function game(){
+
+}
 
