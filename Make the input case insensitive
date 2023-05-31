@@ -1,0 +1,47 @@
+[33mcommit 3c22910021a68c35b0893deaeae9e965ee035aba[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Filomn Abrha <filmonabrha2020@gmail.com>
+Date:   Wed May 31 09:33:14 2023 +0300
+
+    Make the input data case insensitive
+
+[33mcommit 49e3e6de2322caa43cfb1cedca3c0dd8bdb4a66b[m
+Author: Filomn Abrha <filmonabrha2020@gmail.com>
+Date:   Wed May 31 09:25:42 2023 +0300
+
+    Add prompt function to get the user input
+
+[33mcommit afc1cf22d17e92442e2dcbe9fe3d6e808923f41e[m
+Author: Filomn Abrha <filmonabrha2020@gmail.com>
+Date:   Wed May 31 09:21:32 2023 +0300
+
+    Create a one round Rock-Paper-Scissors game
+
+[33mcommit a23dee753f2d7f1a55e21930dbab1e418f17c9ca[m
+Author: Filomn Abrha <filmonabrha2020@gmail.com>
+Date:   Tue May 30 17:06:35 2023 +0300
+
+    Created the getComputerChoice function
+
+[33mcommit 9874818c8c0994132eb8ed99725a9d987c6720b7[m
+Author: Filomn Abrha <filmonabrha2020@gmail.com>
+Date:   Tue May 30 16:28:15 2023 +0300
+
+    Added two algorithms to solve the project
+
+[33mcommit 1347d49a850db6e912884daff0ca08200bb19a9c[m
+Author: Filomn Abrha <filmonabrha2020@gmail.com>
+Date:   Tue May 30 16:22:59 2023 +0300
+
+    Prepared a plan to tackle the project
+
+[33mcommit dc53220efe0e1b6166fbd4482a46086b97108198[m
+Author: Filomn Abrha <filmonabrha2020@gmail.com>
+Date:   Tue May 30 16:15:48 2023 +0300
+
+    Create and attach a JS script to the HTML
+
+[33mcommit 7b0608cd51bd2339edcd95a2eaf0e6518795970f[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Wedi-Nachew <131978339+Wedi-Nachew@users.noreply.github.com>
+Date:   Tue May 30 16:05:11 2023 +0300
+
+    Initial commit
