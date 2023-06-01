@@ -1,53 +1,33 @@
-// Create a getcomputerSelection() function that returns Rock, Paper or Scissors.
-// I actualy had to look up how to select from arrays randomly in Stack Overflow.
+// a function that randomy selects from the array lists
 let string = ["Rock", "Paper", "Scissors"];
-// console.log(getComputerChoie());
 function getComputerChoice(){
     return string[Math.floor(Math.random()*string.length)];
 }
-    const rock = "Rock";
-    const paper = "Papre";
-    const scissors = "Scissors"
+// a function that announcess results based on different conditions.
+// used the OR logical operator to minimize the use of else ifs
+// used the .toLowerCase string method to make the data input case insensitive in the conditionals
 function playRound(playerSelection,computerSelection) {
-    // if playerSelection is Rock and getCmputerChoice is Paper
-    if (playerSelection.toLowerCase === rock.toLowerCase && computerSelection==="Paper") {
-        return "You Lose! Paper beats Rock";
+    // if the computerSelection beats the playerSelection
+    if ((playerSelection.toLowerCase === "Rock".toLowerCase && computerSelection === "Paper") || 
+    (playerSelection.toLowerCase === "Paper".toLowerCase && computerSelection === "Scissors") || 
+    (playerSelection.toLowerCase === "Scissors".toLowerCase && computerSelection === "Rock")) {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    // if the playerSelection beats the computerSelection
+    } else if ((playerSelection.toLowerCase === "Scissors".toLowerCase && computerSelection === "Paper") || 
+    (playerSelection.toLowerCase === "Rock".toLowerCase && computerSelection === "Scissors") ||
+    (playerSelection.toLowerCase ==="Paper".toLowerCase && computerSelection === "Rock")) {
+        return `You Won! ${playerSelection} beat ${computerSelection}`;
     } 
-    // if playerSelection is Rock and getCmputerChoice is Scissors
-    else if (playerSelection.toLowerCase === rock.toLowerCase && computerSelection==="Scissors") {
-        return "You Won! Rock beats Scissors";
-    } 
-    // if playerSelection is Paper and getCmputerChoice is Scissors
-    else if (playerSelection.toLowerCase === paper.toLowerCase && computerSelection==="Scissors") {
-        return "You Lose! Scissors beat Paper";
-    } 
-    // if playerSelection is Paper and getCmputerChoice is Rock
-    else if (playerSelection.toLowerCase === paper.toLowerCase && computerSelection==="Rock") {
-        return "You Won! Paper beats Rock";
-    } 
-    // if playerSelection is Scissors and getCmputerChoice is Rock
-    else if (playerSelection.toLowerCase === scissors.toLowerCase && computerSelection==="Rock") {
-        return "You Won! Rock beats Scissors";
-    } 
-    // if playerSelection is Scissors and getCmputerChoice is Paper
-    else if (playerSelection.toLowerCase === scissors.toLowerCase && computerSelection==="Paper") {
-        return "You Lose! Scissors beat Paper";
-    } else {
-        return "Draw! Not Bad!";
-    }
+    // if it's a tie. means both selects the same item
+        return "It's a tie"     
 }
-// modified the playerSelection Variable so that the it can hold the players selection
-const playerSelection = (prompt("Enter your selection: "));
-console.log(playerSelection);
+// assign the randomly selected string from the array list to the computerSelection parameter
 const computerSelection = getComputerChoice();
 console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection ));
-// creating the game function.
-// function game(){
-//     let round = playRound();
-//     for (let i=1; i<=5; i++) {
-//         if (playRound === "")
-//     }
-
-// }
-
+// ask the user to input his/her choice and assign the inputed data to the playerSelection parameter
+// used the .toLowerCase(); to change the playerSelection uniformally lower cases in case the input has mixed case
+const playerSelection = (prompt("Enter your selection: ")).toLowerCase();
+console.log(playerSelection);
+// assigns the result of the game to the result variable
+const result = playRound(playerSelection, computerSelection);
+console.log(result);
