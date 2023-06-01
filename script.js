@@ -6,28 +6,54 @@ function getComputerChoice(){
 // a function that announcess results based on different conditions.
 // used the OR logical operator to minimize the use of else ifs
 // used the .toLowerCase string method to make the data input case insensitive in the conditionals
-function playRound(playerSelection,computerSelection) {
-    // if the computerSelection beats the playerSelection
-    if ((playerSelection.toLowerCase === "Rock".toLowerCase && computerSelection === "Paper") || 
-    (playerSelection.toLowerCase === "Paper".toLowerCase && computerSelection === "Scissors") || 
-    (playerSelection.toLowerCase === "Scissors".toLowerCase && computerSelection === "Rock")) {
-        return `You Lose! ${computerSelection} beats ${playerSelection}`;
-    // if the playerSelection beats the computerSelection
-    } else if ((playerSelection.toLowerCase === "Scissors".toLowerCase && computerSelection === "Paper") || 
-    (playerSelection.toLowerCase === "Rock".toLowerCase && computerSelection === "Scissors") ||
-    (playerSelection.toLowerCase ==="Paper".toLowerCase && computerSelection === "Rock")) {
-        return `You Won! ${playerSelection} beat ${computerSelection}`;
+// if the computerSelection beats the playerSelection
+// if the playerSelection beats the computerSelection
+// if it's a tie. means both selects the same ite
+function playGround(playerSelection, computerSelection){
+    if ((playerSelection === "Rock" && computerSelection === "Scissors") ||
+        (playerSelection === "Scissors" && computerSelection === "Paper") ||
+        (playerSelection === "Paper" && computerSelection === "Rock")) {
+            return `You Won! ${playerSelection} beats ${computerSelection}`;
     } 
-    // if it's a tie. means both selects the same item
-        return "It's a tie"     
+    else if  ((playerSelection === "Rock" && computerSelection === "Paper") ||
+              (playerSelection === "Paper" && computerSelection === "Scissors") ||  
+              (playerSelection === "Scissors" && computerSelection === "Rock")) {
+           return `You Lose! ${computerSelection} beats ${playerSelection}`;
+    } else if (playerSelection===computerSelection) {
+        return `It's a tie! ${playerSelection} and  ${computerSelection} are the same!` 
+    } else {
+        return "You entred invalid word!"
+    }  
 }
-// assign the randomly selected string from the array list to the computerSelection parameter
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
-// ask the user to input his/her choice and assign the inputed data to the playerSelection parameter
-// used the .toLowerCase(); to change the playerSelection uniformally lower cases in case the input has mixed case
-const playerSelection = (prompt("Enter your selection: ")).toLowerCase();
-console.log(playerSelection);
-// assigns the result of the game to the result variable
-const result = playRound(playerSelection, computerSelection);
-console.log(result);
+function game() {
+    let playerScore= 0;
+    let computerScore = 0;
+    for (let round = 1; round <= 5; round++){
+        let computerSelection = getComputerChoice();
+        console.log(`The Computer Selects ${computerSelection}`)
+        let playerSelection = (prompt("Enter your selection: "));
+        console.log(`You Selected ${playerSelection}`);
+        let result = playGround(playerSelection, computerSelection);
+        if (result === `You Won! ${playerSelection} beats ${computerSelection}`) {
+            console.log(`You Won! ${playerSelection} beats ${computerSelection}`);
+            playerScore++;
+            console.log(playerScore, computerScore);
+        } else if(result === `You Lose! ${computerSelection} beats ${playerSelection}`) {
+            console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
+            computerScore++;  
+            console.log(playerScore, computerScore);
+        } else {
+            console.log("It's a tie"); 
+            console.log(playerScore, computerScore);  
+        }      
+    }
+    if (playerScore > computerScore) {
+        console.log(`Wow! You Won ${playerScore} to ${computerScore}!`);
+    } else if (playerScore < computerScore){
+        console.log(`Loser! The Computer Beats you ${playerScore} to ${computerScore} Bitch`)
+    } else {
+        console.log(`Pheew! Neck-to-Neck Tie! ${playerScore} to ${computerScore}`);
+    }      
+
+}
+console.log(game());
