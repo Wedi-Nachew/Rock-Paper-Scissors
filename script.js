@@ -5,10 +5,7 @@ function getComputerChoice(){
 }
 // a function that announcess results based on different conditions.
 // used the OR logical operator to minimize the use of else ifs
-// used the .toLowerCase string method to make the data input case insensitive in the conditionals
-// if the computerSelection beats the playerSelection
-// if the playerSelection beats the computerSelection
-// if it's a tie. means both selects the same ite
+// invoked the .toUpperCase() method to change the case of the words to uppercase before comparsion
 function playGround(playerSelection, computerSelection){
     // if the playerselection beats the computerSelection
     if ((playerSelection.toUpperCase() === "Rock".toUpperCase() && computerSelection.toUpperCase() === "Scissors".toUpperCase()) ||
@@ -47,15 +44,17 @@ function game() {
         if (result === `You Won! ${playerSelection} beats ${computerSelection}`) {
             console.log(`You Won! ${playerSelection} beats ${computerSelection}`);
             playerScore++;
-            console.log(`You:${playerScore}, Computer${computerScore}`);
+            console.log(`You: ${playerScore}, Computer: ${computerScore}`);
         } else if(result === `You Lose! ${computerSelection} beats ${playerSelection}`) {
             console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
             computerScore++;  
-            console.log(`You:${playerScore}, Computer${computerScore}`);
-        } else {
+            console.log(`You: ${playerScore}, Computer: ${computerScore}`);
+        } else if(playerSelection.toUpperCase()===computerSelection.toUpperCase()){
             console.log("It's a tie"); 
-            console.log(`You:${playerScore}, Computer${computerScore}`);  
-        }      
+            console.log(`You: ${playerScore}, Computer: ${computerScore}`);  
+        } else {
+            console.log("You Entred an invalid selction.\n Seriously dude improve your writing scale")
+        }     
     }
     // condition on deciding who the Final winner is
     if (playerScore > computerScore) {
