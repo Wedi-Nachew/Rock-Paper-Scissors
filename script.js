@@ -1,46 +1,48 @@
 // a function that randomy selects from the array lists
-let string = ["Rock", "Paper", "Scissors"];
+let options = ["Rock", "Paper", "Scissors"];
+let playerScore = 0;
+let computerScore = 0;
+let computerSelection = "";
 function getComputerChoice(){
-    return string[Math.floor(Math.random()*string.length)];
+    return options[Math.floor(Math.random()*options.length)];
 }
-// a function that announcess results based on different conditions.
-// used the OR logical operator to minimize the use of else ifs
-// invoked the .toUpperCase() method to change the case of the words to uppercase before comparsion
+
+function getUserSelection(whichOne) {
+    computerSelection = getComputerChoice();
+    if(whichOne == "rock") {
+        playerSelection = "rock";
+        let result = playGround(playerSelection, computerSelection); 
+        console.log(game())
+    }  
+      else if(whichOne == "paper") {
+        playerSelection =  "paper";
+        let result = playGround(playerSelection, computerSelection); 
+        console.log(game())
+      
+    } else if (whichOne == "scissors") {
+        playerSelection =   "scissors"; 
+        let result =  playGround(playerSelection, computerSelection);
+        console.log(game())
+      
+    }
+}
+console.log(getUserSelection())
 function playGround(playerSelection, computerSelection){
-    // if the playerselection beats the computerSelection
     if ((playerSelection.toUpperCase() === "Rock".toUpperCase() && computerSelection.toUpperCase() === "Scissors".toUpperCase()) ||
         (playerSelection.toUpperCase() === "Scissors".toUpperCase() && computerSelection.toUpperCase() === "Paper".toUpperCase()) ||
         (playerSelection.toUpperCase() === "Paper".toUpperCase() && computerSelection.toUpperCase() === "Rock".toUpperCase())) {
             return `You Won! ${playerSelection} beats ${computerSelection}`;
-    } 
-    // if the computerSelection beats the playerSelection
-    else if  ((playerSelection.toUpperCase() === "Rock".toUpperCase() && computerSelection.toUpperCase() === "Paper".toUpperCase()) ||
+    } else if  ((playerSelection.toUpperCase() === "Rock".toUpperCase() && computerSelection.toUpperCase() === "Paper".toUpperCase()) ||
               (playerSelection.toUpperCase() === "Paper".toUpperCase() && computerSelection.toUpperCase() === "Scissors".toUpperCase()) ||  
               (playerSelection.toUpperCase() === "Scissors".toUpperCase() && computerSelection.toUpperCase() === "Rock".toUpperCase())) {
            return `You Lose! ${computerSelection} beats ${playerSelection}`;
-    } 
-    // if both came up with the same selection
-    else if (playerSelection.toUpperCase()===computerSelection.toUpperCase()) {
-        return `It's a tie! ${playerSelection} and  ${computerSelection} are the same!` 
-    } else {
-        return "You entred invalid word!"
+    } else{
+        return `It's a tie!` 
     }  
 }
-// create a function called game()
+
 function game() {
-    // declare two variables to record the score of each round
-    let playerScore= 0;
-    let computerScore = 0;
-    // using for loop to let the player to play 5 roundes
-    for (let round = 1; round <= 5; round++){
-        // invoke the function and the user input also the computer choice here will
-        // make the loop to ask the user and the computer in each round 
-        let playerSelection = (prompt("Enter your selection: ")).toUpperCase();
-        console.log(`You Selected ${playerSelection}`);
-        let computerSelection = getComputerChoice().toUpperCase();
-        console.log(`The Computer Selects ${computerSelection}`)
-        let result = playGround(playerSelection, computerSelection);
-        // conditionals on who won the round
+    let result = playGround(playerSelection, computerSelection);
         if (result === `You Won! ${playerSelection} beats ${computerSelection}`) {
             console.log(`You Won! ${playerSelection} beats ${computerSelection}`);
             playerScore++;
@@ -52,18 +54,15 @@ function game() {
         } else if(playerSelection.toUpperCase()===computerSelection.toUpperCase()){
             console.log("It's a tie"); 
             console.log(`You: ${playerScore}, Computer: ${computerScore}`);  
-        } else {
-            console.log("You Entred an invalid selction.\n Seriously dude improve your writing scale")
-        }     
-    }
-    // condition on deciding who the Final winner is
-    if (playerScore > computerScore) {
-        console.log(`Wow! You Won ${playerScore} to ${computerScore}!`);
-    } else if (playerScore < computerScore){
-        console.log(`Loser! The Computer Beats you ${playerScore} to ${computerScore} Bitch`)
-    } else {
-        console.log(`Pheew! Neck-to-Neck Tie! ${playerScore} to ${computerScore}`);
-    }      
+        }
 
-}
-console.log(game());
+        if (playerScore == 5 ) {
+            console.log(`Wow! You Won ${playerScore} to ${computerScore}!`);
+            computerScore = 0;
+            playerScore = 0;
+        } else if ( computerScore == 5){
+            console.log(`Loser! The Computer Beats you ${playerScore} to ${computerScore}`)
+            computerScore = 0;
+            playerScore = 0;
+        }     
+    } 
