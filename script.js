@@ -64,7 +64,7 @@ function game() {
         }
 
         if (playerScore == 5 ) {
-            alert(finalResult.textContent = `Wow! You Won ${playerScore} to ${computerScore}!`);
+            alert(finalResult.textContent = `Wow! You Won ${playerScore} to ${computerScore}!`)
             computerScore = 0;
             playerScore = 0;
             roundResult.textContent = "Play Again!" 
