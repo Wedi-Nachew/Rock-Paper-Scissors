@@ -68,6 +68,7 @@ function game() {
             computerScore = 0;
             playerScore = 0;
             roundResult.textContent = "Play Again!" 
+            roundResult.style.fontSize = "30px";
             finalResult.textContent = ""
             score.textContent = ""
         } else if ( computerScore == 5){
@@ -75,6 +76,7 @@ function game() {
             computerScore = 0;
             playerScore = 0;
             roundResult.textContent= "Play Again"
+            roundResult.style.fontSize = "30px";
             score.textContent = ""
             finalResult.textContent = ""
         }     
