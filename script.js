@@ -53,14 +53,14 @@ function game() {
         if (result === `You Won! ${playerSelection} beats ${computerSelection}`) {
             roundResult.textContent = `You Won! ${playerSelection} beats ${computerSelection}`;
             playerScore++;
-            score.textContent = `You: ${playerScore}, Computer: ${computerScore}`;
+            score.textContent = `You: ${playerScore}   Computer: ${computerScore}`;
         } else if(result === `You Lose! ${computerSelection} beats ${playerSelection}`) {
             roundResult.textContent = `You Lose! ${computerSelection} beats ${playerSelection}`;
             computerScore++;  
-            score.textContent = `You: ${playerScore}, Computer: ${computerScore}`;
+            score.textContent = `You: ${playerScore}   Computer: ${computerScore}`;
         } else if(playerSelection.toUpperCase()===computerSelection.toUpperCase()){
             roundResult.textContent = ("It's a tie"); 
-            score.textContent =`You: ${playerScore}, Computer: ${computerScore}`;  
+            score.textContent =`You: ${playerScore}   Computer: ${computerScore}`;  
         }
 
         if (playerScore == 5 ) {
