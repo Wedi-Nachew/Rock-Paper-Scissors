@@ -3,17 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <script src="./script.js" defer></script>
-    <title>Document</title>
+    <link rel = "stylesheet" href="styles.css"></link>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
+    <div id="welcome">
+        <h1>Can you beat the computer?</h1>
+        <p>The first one to score 5 wins</p>
+    </div>
     <div id="buttons">
-        <button id="rock" onclick="getUserSelection('rock')">Rock</button>
-        <button id= "paper" onclick="getUserSelection('paper')">Paper</button>
-        <button id="scissors" onclick="getUserSelection('scissors')">Scissors</button>
+        <div id = "img-btn">
+            <img src="img/The-Rock-Transparent-Background.png">
+            <button id="rock" onclick="getUserSelection('rock')">Rock</button>
+        </div>
+        <div id = "img-btn">
+            <img src="img/paper-png-30750.png">
+            <button id= "paper" onclick="getUserSelection('paper')">Paper</button>
+        </div>
+        <div id = "img-btn">
+            <img src="img/scissors-23236.png">
+            <button id="scissors" onclick="getUserSelection('scissors')">Scissors</button>
+        </div>
     </div>
     <div id="score-board">
-
+    <p id="round-result"></p>
+    <p id="score"></p>
+    <p id="final-result"></p>
     </div>
+    <footer id="footer">
+        <p>Developed by Filmon Geberlibanos</p>
+    </footer>
     
 </body>
 </html>
